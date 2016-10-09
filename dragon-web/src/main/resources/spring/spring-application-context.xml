@@ -6,4 +6,7 @@
 
     <context:component-scan base-package="com.bzj.daagon">
     </context:component-scan>
+
+
+    <import resource="dataSources/dragon-*-context.xml"></import>
 </beans>
