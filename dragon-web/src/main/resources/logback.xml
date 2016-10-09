@@ -17,82 +17,8 @@
         </encoder>
     </appender>
 
-    <appender name="funcStat" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <Append>true</Append>
-        <File>logs/funcstat.log</File>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>logs/funcstat.%d{yyyy-MM-dd}.log</FileNamePattern>
-        </rollingPolicy>
-        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger:%line - %msg%ex%n</pattern>
-        </encoder>
-    </appender>
-
-    <appender name="jobTask" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <Append>true</Append>
-        <File>logs/jobtask.log</File>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>logs/jobtask.%d{yyyy-MM-dd}.log</FileNamePattern>
-        </rollingPolicy>
-        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger:%line - %msg%ex%n</pattern>
-        </encoder>
-    </appender>
-
-    <appender name="channelPromotion" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <Append>true</Append>
-        <File>logs/promotion.log</File>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>logs/promotion.%d{yyyy-MM-dd}.log</FileNamePattern>
-        </rollingPolicy>
-        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger:%line - %msg%ex%n</pattern>
-        </encoder>
-    </appender>
-
-    <appender name="formonitor" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <Append>true</Append>
-        <File>logs/error.log</File>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>logs/error.%d{yyyy-MM-dd}.log</FileNamePattern>
-        </rollingPolicy>
-        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger:%line - %msg%ex%n</pattern>
-        </encoder>
-    </appender>
-
-    <appender name="deviceLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <Append>true</Append>
-        <File>logs/device.log</File>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>logs/error.%d{yyyy-MM-dd}.log</FileNamePattern>
-        </rollingPolicy>
-        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger:%line - %msg%ex%n</pattern>
-        </encoder>
-    </appender>
-
-    //api访问统计日志
-    <logger name="com.xiaobai.dubhe.protocol.filter.DubheStatFuncFilter" level="INFO">
-        <appender-ref ref="funcStat"/>
-    </logger>
-
-    //App安装统计日志
-    <logger name="com.xiaobai.dubhe.controllers.common.v1.AppInstallContrller" level="INFO">
-        <appender-ref ref="deviceLog"/>
-    </logger>
-
-    //任务运行日志
-    <logger name="com.xiaobai.dubhe.task" additivity="false" level="INFO">
-        <appender-ref ref="jobTask"/>
-    </logger>
-
-    <logger name="com.xiaobai.dubhe.controllers.common.v1.AppPromotionController" additivity="false" level="INFO">
-        <appender-ref ref="channelPromotion"/>
-    </logger>
-
-    //错误日志打印
-    <root level="info">
+    <!--错误日志打印-->
+    <root level="error">
         <appender-ref ref="stdout"/>
     </root>
 
@@ -111,7 +37,4 @@
     <!--<logger name="java.sql.Statement" level="debug" />-->
     <!--<logger name="java.sql.PreparedStatement" level="debug" />-->
     <!--<logger name="java.sql.ResultSet" level="debug" />-->
-
-
-    <!--  该日志需要调整  -->
 </configuration>

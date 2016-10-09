@@ -10,13 +10,14 @@
         <module>dragon-web</module>
         <module>dragon-service</module>
         <module>dragon-dao</module>
+        <module>dragon-utils</module>
     </modules>
 
     <name>dragon-root</name>
     <url>http://maven.apache.org</url>
 
     <properties>
-        <spring.version>3.2.9.RELEASE</spring.version>
+        <spring.version>4.2.4.RELEASE</spring.version>
         <json.version>1.2.8</json.version>
         <slf4j.version>1.7.21</slf4j.version>
         <logback.version>1.1.7</logback.version>

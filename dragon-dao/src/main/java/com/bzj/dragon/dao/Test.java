@@ -1,4 +1,4 @@
-package com.bzj.daagon.dao;
+package com.bzj.dragon.dao;
 
 /**
  * User:aaronbai@tcl.com
