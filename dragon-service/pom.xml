@@ -17,5 +17,10 @@
             <artifactId>dragon-dao</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.bzj</groupId>
+            <artifactId>dragon-utils</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>

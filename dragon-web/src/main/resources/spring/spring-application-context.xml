@@ -6,7 +6,7 @@
                             http://www.springframework.org/schema/context
                             http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.bzj.daagon">
+    <context:component-scan base-package="com.bzj.dragon">
     </context:component-scan>
     <context:property-placeholder location="classpath:db.properties"/>
     <import resource="dataSources/dragon-*-context.xml"></import>

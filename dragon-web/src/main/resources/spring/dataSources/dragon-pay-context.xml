@@ -38,7 +38,7 @@
         </property>
     </bean>
     <bean id="userMapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.bzj.daagon.dao"/>
+        <property name="basePackage" value="com.bzj.dragon.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
