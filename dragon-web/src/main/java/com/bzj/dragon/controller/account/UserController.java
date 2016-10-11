@@ -3,7 +3,7 @@ package com.bzj.dragon.controller.account;
 import com.bzj.dragon.controller.account.vo.UserVo;
 import com.bzj.dragon.dao.bean.User;
 import com.bzj.dragon.service.account.UserService;
-import com.bzj.dragon.utils.BeanMapper;
+import com.bzj.dragon.utils.common.BeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

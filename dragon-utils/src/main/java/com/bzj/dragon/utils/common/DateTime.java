@@ -1,4 +1,4 @@
-package com.bzj.dragon.utils;
+package com.bzj.dragon.utils.common;
 
 import java.util.Date;
 

@@ -13,8 +13,16 @@
 
     <dependencies>
         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
             <groupId>net.sf.dozer</groupId>
             <artifactId>dozer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
         </dependency>
     </dependencies>
 </project>
