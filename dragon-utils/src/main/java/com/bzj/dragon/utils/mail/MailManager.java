@@ -6,6 +6,7 @@ import com.bzj.dragon.utils.mail.bean.ServerConfig;
 import com.bzj.dragon.utils.mail.bean.Email;
 import com.bzj.dragon.utils.mail.enums.ContentType;
 import com.bzj.dragon.utils.mail.exception.MailException;
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.CaseInsensitiveMap;
 
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
@@ -51,7 +52,7 @@ public class MailManager {
      * @param email
      * @return
      */
-    public boolean sendNew(Email email) {
+    public boolean sendEmail(Email email) {
         Message msg = new MimeMessage(session);
         try {
             msg.setFrom(new InternetAddress(email.getSender()));
@@ -78,23 +79,8 @@ public class MailManager {
                 msg.setRecipients(RecipientType.BCC, bccInternetAddressees);
             }
 
-            //添加附件
-            Multipart mp = new MimeMultipart();
-            addAffix(email,mp);
-
-            //thml格式邮件发送
-            if (ContentType.HTML.equals(email.getContentType())) {
-                BodyPart body = new MimeBodyPart();
-                body.setContent(email.getContent(), "text/html;charset=utf-8");
-                mp.addBodyPart(body, 0);
-                msg.setContent(mp);
-            }
-
-            //文本格式文件发送
-            if (ContentType.TEXT.equals(email.getContentType())) {
-                msg.setText(email.getContent());
-                msg.setContent(mp);
-            }
+            Multipart multipart = addAffix(email);
+            msg.setContent(multipart);
             Transport.send(msg);
         } catch (MessagingException e) {
             throw new MailException("sendMail is exception", e);
@@ -108,19 +94,32 @@ public class MailManager {
      * 添加附件
      *
      * @param email
-     * @param mp
      * @throws IOException
      * @throws MessagingException
      */
-    public void addAffix(Email email, Multipart mp) throws IOException, MessagingException {
+    public Multipart addAffix(Email email) throws IOException, MessagingException {
+        Multipart mp = new MimeMultipart();
         if (email.hasAffix()) {
             String[] affixName = email.getAffixName();
             for (int i = 0; i < affixName.length; i++) {
                 MimeBodyPart affix = new MimeBodyPart();
                 affix.attachFile(affixName[i]);
-                mp.addBodyPart(affix, i);
+                mp.addBodyPart(affix);
             }
         }
+        switch (email.getContentType()){
+            case HTML:
+                BodyPart body = new MimeBodyPart();
+                body.setContent(email.getContent(), "text/html;charset=utf-8");
+                mp.addBodyPart(body);
+                break;
+            case TEXT:
+                BodyPart messageBodyPart = new MimeBodyPart();
+                messageBodyPart.setText(email.getContent());
+                mp.addBodyPart(messageBodyPart);
+                break;
+        }
+        return mp;
     }
 
 
