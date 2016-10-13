@@ -27,6 +27,7 @@
         <mybatis.spring.version>1.3.0</mybatis.spring.version>
         <dozer.version>5.5.1</dozer.version>
         <spring.mongodb.version>1.9.3.RELEASE</spring.mongodb.version>
+        <mongodb.driver.version>3.3.0</mongodb.driver.version>
     </properties>
 
     <build>

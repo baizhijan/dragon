@@ -17,5 +17,10 @@
             <artifactId>spring-data-mongodb</artifactId>
             <version>${spring.mongodb.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>${mongodb.driver.version}</version>
+        </dependency>
     </dependencies>
 </project>

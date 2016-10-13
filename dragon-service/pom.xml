@@ -22,5 +22,10 @@
             <artifactId>dragon-utils</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.bzj</groupId>
+            <artifactId>dragon-mongodb</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>
