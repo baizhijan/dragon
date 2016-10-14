@@ -10,3 +10,11 @@
 
 utils:
     1.增加邮件功能
+redis
+    1.增加redis功能
+mongodb
+    1.分装mongodb基础调用
+web
+    1.增加跨域拦截器
+    2.增加任务功能
+    3.增加mvc
