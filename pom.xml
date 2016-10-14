@@ -12,6 +12,8 @@
         <module>dragon-mysql</module>
         <module>dragon-utils</module>
         <module>dragon-mongodb</module>
+        <module>dragon-redis</module>
+        <module>dragon-protocol</module>
     </modules>
 
     <name>dragon-root</name>
@@ -28,6 +30,11 @@
         <dozer.version>5.5.1</dozer.version>
         <spring.mongodb.version>1.9.3.RELEASE</spring.mongodb.version>
         <mongodb.driver.version>3.3.0</mongodb.driver.version>
+        <redis.driver.version>2.8.2</redis.driver.version>
+        <spring.redis.version>1.7.4.RELEASE</spring.redis.version>
+        <velocity.version>1.7</velocity.version>
+        <velocity.tools.version>2.0</velocity.tools.version>
+        <servlet.version>2.5</servlet.version>
     </properties>
 
     <build>

@@ -11,4 +11,5 @@
     <context:property-placeholder location="classpath:*.properties"/>
 
     <import resource="/dataSources/*/dragon-*-context.xml"></import>
+    <import resource="spring-task.xml"></import>
 </beans>

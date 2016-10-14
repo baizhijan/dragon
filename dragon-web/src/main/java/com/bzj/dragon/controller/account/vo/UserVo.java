@@ -1,11 +1,13 @@
 package com.bzj.dragon.controller.account.vo;
 
+import java.io.Serializable;
+
 /**
  * User:aaronbai@tcl.com
  * Date:2016-10-10
  * Time:10:53
  */
-public class UserVo {
+public class UserVo implements Serializable{
 
     private String account;
     private String password;

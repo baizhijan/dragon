@@ -6,6 +6,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+    <!--改文件配置方式是jsp格式-->
+
     <!--指定mvc注解扫描范围，该部分只扫描到controller-->
     <context:component-scan base-package="com.bzj.dragon.controller">
     </context:component-scan>
@@ -38,6 +40,32 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+
+
+    <!--velocity视图解析器-->
+    <!--<bean id="velocityConfigurer" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">-->
+        <!--<property name="resourceLoaderPath"  value="WEB-INF/velocity/" />&lt;!&ndash; 設置模板防止位置&ndash;&gt;-->
+        <!--<property name="velocityProperties">-->
+            <!--<props>-->
+                <!--<prop key="directive.foreach.counter.name">loopCounter</prop>-->
+                <!--<prop key="directive.foreach.counter.initial.value">0</prop>-->
+                <!--<prop key="input.encoding">UTF-8</prop>&lt;!&ndash; 指定模板引擎进行模板处理的编码 &ndash;&gt;-->
+                <!--<prop key="output.encoding">UTF-8</prop>&lt;!&ndash; 指定输出流的编码 &ndash;&gt;-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean id="ViewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">-->
+        <!--<property name="cache" value="true" />-->
+        <!--<property name="prefix" value="/" />&lt;!&ndash; 视图文件的前缀，即存放的路径 &ndash;&gt;-->
+        <!--<property name="suffix" value=".vm" />&lt;!&ndash; 视图文件的后缀名 &ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="toolboxConfigLocation" value="/WEB-INF/tools.xml" /><!–toolbox配置文件路径–>&ndash;&gt;-->
+        <!--<property name="dateToolAttribute" value="date" />&lt;!&ndash;日期函数名称&ndash;&gt;-->
+        <!--<property name="numberToolAttribute" value="number" />&lt;!&ndash;数字函数名称&ndash;&gt;-->
+        <!--<property name="contentType" value="text/html;charset=UTF-8" />-->
+        <!--<property name="exposeSpringMacroHelpers" value="true" />&lt;!&ndash;是否使用spring对宏定义的支持&ndash;&gt;-->
+        <!--<property name="exposeRequestAttributes" value="true" />&lt;!&ndash;是否开放request属性&ndash;&gt;-->
+        <!--<property name="requestContextAttribute" value="rc"/>&lt;!&ndash;request属性引用名称&ndash;&gt;-->
+    <!--</bean>-->
 
     <!--<mvc:interceptors>-->
         <!--<mvc:interceptor>-->
