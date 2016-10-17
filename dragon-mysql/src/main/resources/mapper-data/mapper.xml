@@ -5,4 +5,33 @@
     <insert id="saveUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO b_user(account,password,nickname) VALUES (#{account},#{password},#{nickname})
     </insert>
-</mapper>
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////// -->
+    <!--批量插入demo-->
+    <insert id="a" useGeneratedKeys="true">
+        INSERT INTO table_namea
+                (product_id,departs_date,price_value)
+        VALUES
+        <foreach collection="list" index="index" item="item"
+                 separator=",">
+            (#{item.productId},#{item.departsDate},#{item.priceValue})
+        </foreach>
+    </insert>
+
+    <!--insert INTO … ON DUPLICATE KEY UPDATE
+        注释：在ON DUPLICATE KEY UPDATE后面的 参数 = values（参数） 是冲突时要修改的参数
+    -->
+    <update id="b">
+        insert INTO table_name
+                (product_id,departs_date,price_value,)
+        VALUES
+        <foreach collection="list" index="index" item="item"
+                 separator=",">
+            (#{item.productId},#{item.departsDate},#{item.priceValue}
+        </foreach>
+        ON DUPLICATE KEY UPDATE
+        price_type = VALUES(price_type),
+        price_value = VALUES(price_value)
+    </update>
+
+        </mapper>
