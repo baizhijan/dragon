@@ -25,7 +25,9 @@ import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
 import java.io.*;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
@@ -245,7 +247,7 @@ public class HttpUtils {
                     sslcontext,
                     new String[]{"TLSv1"},
                     null,
-                    SSLConnectionSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
+                    SSLConnectionSocketFactory.getDefaultHostnameVerifier());
             CloseableHttpClient httpclient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
             return httpclient;
         } catch (KeyStoreException e) {
